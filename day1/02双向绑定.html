@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/vue/2.4.2/vue.min.js"></script>
+</head>
+<body>
+<div id="app">
+    {{num > 5 ? "yes" : "no"  }}
+
+    <div v-text="tpl"> </div>
+    <div v-html="tpl"> </div>
+    <input type="text" v-model="num"> </input>
+</div>
+</body>
+<script>
+    let app = new Vue({
+        el:"#app",
+        data:{
+            message:'start',
+            name:'susu',
+            num:10,
+            tpl:"<h1>hello susu</h1>"
+        }
+    });
+    app.message ="小仙女";
+</script>
+</html>

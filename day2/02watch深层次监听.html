@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/vue/2.4.2/vue.min.js"></script>
+
+</head>
+<body>
+<div id="box">
+    {{a}}
+    <br>
+    {{b}}
+    {{obj.name}}
+</div>
+</body>
+<script>
+    let vm =new Vue({
+        el:"#box",
+        data:{
+            stark:"susu",
+            a:"111",
+            b:"222",
+            obj:{
+                name:"susu",
+                age:18
+            }
+        }
+    });
+    vm.$watch("obj",function () {
+        alert("this.obj.name");
+        //没有深层次监听 对象要深度监听
+    });
+    document.onclick= function () {
+        vm.obj.name ='shudong' ;
+    }
+</script>
+</html>

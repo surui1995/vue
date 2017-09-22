@@ -1,0 +1,48 @@
+在vuejs里面：
+1.可以使用jquery的ajax
+这个就是引入jquery使用里面的ajax
+2.vue-resource
+目前官方已经不在维护
+ 作者建议使用axios
+ 支持：get post jsonp
+ 适用方式需要引入 vue-resource
+ 引入后 在vue里面 直接使用
+ this.$http.get()
+ this.$http.post(url链接，传的参数)
+ http的请求方式：
+ 1）$.get(url,[data],[callback])
+ 2）$.getJSON(url,[data],[callback])
+ 3）$.post(url,[data],[callback],[type])
+ 4）$.ajax(opiton)
+ 5）$.getScript( url, [callback] )
+ 6）jquery对象.load( url, [data], [callback] )
+ 7）serialize() 与 serializeArray()
+3.axios
+支持：get post
+区别：
+  get 传参需要：
+  params：{
+    name：“sartk”，
+    age：18
+  }
+  post：{
+      name：“sartk”，
+      age：18
+  }
+   get和post都是数据提交的方式。
+   get的数据是通过网址问号后边拼接的字符串进行传递的。post是通过一个HTTP包体进行传递数据的。
+   get的传输量是有限制的，post是没有限制的。
+   get的安全性可能没有post高，所以我们一般用get来获取数据，post一般用来修改数据。
+
+自己本身不支持jsonp
+
+使用方式：
+引入axios插件
+axios.get()
+可以使用两种传参方式：
+1.直接在url后面拼接
+user?id=12335
+2.在第二个参数传参
+
+
+

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/vue/2.4.2/vue.min.js"></script>
+
+</head>
+<body>
+<div id="box">
+    <stark>
+
+    </stark>
+</div>
+</body>
+<script type="x-template" id="tpl">
+<div>
+    <h2 @click="change()">标题:{{msg}}</h2>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+</div>
+</script>
+<script>
+    //data必须写成闭包形式  一定要使用return的方式返回一个对象
+//    好处：每个组件相互不污染 不影响 都是独立的
+  let vm = new Vue({
+      el:"#box",
+      components:{
+          'stark':{
+              data(){
+                  return{
+                      msg:"hello susu"
+                  }
+              },
+              methods:{
+                  change(){
+                      this.msg="changed"
+                  }
+              },
+              template:"#tpl"
+          }
+      }
+  })
+</script>
+</html>

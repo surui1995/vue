@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/vue/2.4.2/vue.min.js"></script>
+
+</head>
+<body>
+<div id="box">
+    <stark></stark>
+    <ul slot="ul-slot">
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>替换默认的位置</li>
+    </ul>
+    <!--<stark>-->
+        <!--<div>我是内容</div>-->
+    <!--</stark>-->
+</div>
+<template id="aaa">
+    <div>
+    <h1>
+        slot 开始
+    </h1>
+    <slot name="ul-slot">
+        ul-slot 位置
+    </slot>
+    <!--<slot> ul-slot 位置</slot>-->
+    </div>
+</template>
+</body>
+<script>
+ let vm = new Vue({
+     el:"#box",
+     data:{
+         a:"aaa"
+     },
+     components:{
+         "stark":{
+             template:"#aaa"
+         }
+     }
+ });
+// template 必须有一个跟标签
+</script>
+</html>

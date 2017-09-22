@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/vue/2.4.2/vue.min.js"></script>
+
+</head>
+<body>
+<div id="box">
+    <stark>
+        <div slot="two">我想替换第2个位置</div>
+        <div slot="three">我想替换第3个位置</div>
+        <div slot="three">我想替换第1个位置</div>
+        <div>
+            我是一个不替换的slot标签
+        </div>
+    </stark>
+</div>
+</body>
+<script>
+//    全局组件不加s
+Vue.component("stark",{
+    template:`
+    <div>
+    <slot name="one"><p>第1个位置
+    </p></slot>
+    <slot name="two"><p>第2个位置
+    </p></slot>
+    <slot name="three"><p>第3个位置</p></slot>
+    <slot>我就要你啊</slot>
+</div>
+    `
+});
+    new Vue({
+        el:"#box"
+    })
+</script>
+</html>
