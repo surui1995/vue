@@ -2,7 +2,7 @@
 1.可以使用jquery的ajax
 这个就是引入jquery使用里面的ajax
 2.vue-resource
-目前官方已经不在维护
+ 目前官方已经不在维护
  作者建议使用axios
  支持：get post jsonp
  适用方式需要引入 vue-resource
@@ -41,8 +41,38 @@
 axios.get()
 可以使用两种传参方式：
 1.直接在url后面拼接
-user?id=12335
+ axios.get('/user?ID=12345')
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
 2.在第二个参数传参
+  axios.get('/user', {
+                params: {
+                ID: 12345
+                }
+            })
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+          axios post
+            ```
+             axios.post('/user', {
+                    firstName: 'Fred',
+                    lastName: 'Flintstone'
+                })
+                .then(function (response) {
+                    console.log(response);
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+            ```
 
 
 
